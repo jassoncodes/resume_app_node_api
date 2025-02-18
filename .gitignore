@@ -1,5 +1,8 @@
 node_modules
 dist
-.env.*
 api.http
+logs
+
+.env.*
 .DS_Store
+*.txt
