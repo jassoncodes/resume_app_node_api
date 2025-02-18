@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 on:
   push:
     branches:
@@ -30,3 +31,6 @@ jobs:
           password: ${{ secrets.ftp_password }}
           local-dir: ./dist/
           server-dir: /frontend/
+=======
+
+>>>>>>> 35d43034e3ef084f3c843eb8d4b1ef95bdaa83e1
