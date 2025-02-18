@@ -1,4 +1,5 @@
 import morgan from "morgan";
+import logger from "./logger.js";
 
 const morganMiddleware = morgan(
   ":method :url :status :res[content-length] - :response-time ms",
