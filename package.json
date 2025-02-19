@@ -1,7 +1,8 @@
 {
   "name": "jassoncodesapi",
-  "version": "1.0.3",
+  "version": "1.0.1",
   "main": "src/server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=production node dist/server.js",

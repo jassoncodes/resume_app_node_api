@@ -21,6 +21,7 @@ jobs:
         run: |
           npm install
           npm run build
+          npm prune --production
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -30,3 +31,7 @@ jobs:
           password: ${{ secrets.ftp_password }}
           local-dir: ./dist/
           server-dir: /api/
+          exclude: |
+            **/.git*
+            **/node_modules/**
+            **/package-lock.json**
