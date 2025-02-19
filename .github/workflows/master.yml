@@ -29,7 +29,7 @@ jobs:
           cp -r dist/* deploy/
           cp package.json deploy/
           cp package-lock.json deploy/ || true
-          cp server.cjs deploy/ || true
+          cp ./server.cjs deploy/ || true
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
