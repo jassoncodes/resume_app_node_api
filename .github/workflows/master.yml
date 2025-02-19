@@ -29,7 +29,6 @@ jobs:
           cp -r dist/* deploy/
           cp package.json deploy/
           cp package-lock.json deploy/
-          cp -r node_modules deploy/
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -41,3 +40,4 @@ jobs:
           server-dir: /api/
           exclude: |
             **/.git*
+            **/node_modules/**
