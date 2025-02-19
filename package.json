@@ -1,6 +1,6 @@
 {
   "name": "jassoncodesapi",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
