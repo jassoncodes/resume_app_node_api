@@ -1,8 +1,8 @@
 node_modules
 dist
-api.http
 logs
 
+*.http
 .env.*
 .DS_Store
 *.txt
