@@ -28,8 +28,8 @@ jobs:
           mkdir -p deploy
           cp -r dist/* deploy/
           cp package.json deploy/
-          cp package-lock.json deploy/ 
-          cp src/server.cjs deploy/
+          cp package-lock.json deploy/
+          cp node_modules deploy/
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -41,4 +41,3 @@ jobs:
           server-dir: /api/
           exclude: |
             **/.git*
-            **/node_modules/**
