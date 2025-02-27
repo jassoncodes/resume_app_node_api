@@ -1,0 +1,8 @@
+node_modules
+dist
+logs
+
+*.http
+.env.*
+.DS_Store
+*.txt
