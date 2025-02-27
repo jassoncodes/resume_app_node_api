@@ -1,11 +1,11 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import dataRoutes from "./routes/dataRoutes.js";
-import checkDatabaseConnection from "./config/checkDatabaseConnection.js";
+import dataRoutes from "./routes/dataRoutes";
+import checkDatabaseConnection from "./config/checkDatabaseConnection";
 
-import morganMiddleware from "./utils/morganHttpReqLogger.js";
-import logger from "./utils/logger.js";
+import morganMiddleware from "./utils/morganHttpReqLogger";
+import logger from "./utils/logger";
 
 dotenv.config();
 
@@ -21,7 +21,7 @@ app.use("/api/data", dataRoutes);
 
 app.listen(port, async () => {
   logger.info(
-    `🚀 Server running in ${process.env.NODE_ENV} mode on port ${port}`
+    `🚀 Server running in ${process.env.NODE_ENV} mode on http://localhost:${port}`
   );
   await checkDatabaseConnection();
 });

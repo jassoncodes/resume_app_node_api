@@ -1,5 +1,5 @@
-import winston, { transports } from "winston";
-const { combine, timestamp, json } = winston.format;
+import winston from "winston";
+const { combine, json } = winston.format;
 
 import "winston-daily-rotate-file";
 import fs from "fs";
@@ -20,6 +20,7 @@ const dailyRotateFileTransport = new winston.transports.DailyRotateFile({
   zippedArchive: true, // Comprime logs antiguos en .gz
   maxSize: "10m", // Máximo tamaño de un archivo antes de rotar (10MB)
   maxFiles: "14d", // Mantiene los logs por 14 días
+  level: "info"
 });
 
 // Configurar el formato del log
@@ -37,10 +38,7 @@ const logger = winston.createLogger({
   format: logFormat,
   transports: [
     new winston.transports.Console(), // Muestra logs en la consola
-    new winston.transports.File({
-      filename: path.join("logs", "app.log"),
-      level: "info",
-    }), // Guarda logs en un archivo
+    dailyRotateFileTransport // Guarda logs en un archivo
   ],
 });
 

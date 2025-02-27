@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "ES2015",
+    "moduleResolution": "bundler",                     /* Specify how TypeScript looks up a file from a given module specifier. */
+    "baseUrl": ".",                                  /* Specify the base directory to resolve non-relative module names. */
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,                                      /* Enable all strict type-checking options. */
+    "esModuleInterop": true,
+    "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
+    "allowJs": true,
+    "noEmit": false,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+  },
+  "exclude": ["node_modules", "dist", "eslint.config.js"]
+}
