@@ -1,20 +1,14 @@
 # ResumeApp Node API
+
 [<img alt="Deployed with FTP Deploy Action" src="https://img.shields.io/badge/Deployed With-FTP DEPLOY ACTION-%3CCOLOR%3E?style=for-the-badge&color=0077b6">](https://github.com/SamKirkland/FTP-Deploy-Action)
 
 - [Remote repo](https://github.com/jassoncodes/jassoncodesapi.git)
 
-### Local development 
+### Local development
 
-```bash 
-docker run --name jasson-postgres \
-  -e POSTGRES_USER=valesaug_jcodes \
-  -e POSTGRES_PASSWORD=jcodesvalesaug \
-  -e POSTGRES_DB=valesaug_jassoncodes \
-  -p 5432:5432 \
-  -v jasson_pgdata:/var/lib/postgresql/data \
-  -d postgres:10.23
+```bash
+docker run --name jasson-postgres -e POSTGRES_USER=valesaug_jcodes -e POSTGRES_PASSWORD=jcodesvalesaug -e POSTGRES_DB=valesaug_jassoncodes -p 5432:5432 -v jasson_pgdata:/var/lib/postgresql/data -d postgres:10.23
 ```
-
 
 #### Project Structure
 
