@@ -17,7 +17,7 @@ app.use(morganMiddleware);
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/data", dataRoutes);
+app.use("/data", dataRoutes);
 
 app.listen(port, async () => {
   logger.info(
