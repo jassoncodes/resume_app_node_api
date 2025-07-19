@@ -12,6 +12,8 @@ docker run --name jasson-postgres -e POSTGRES_USER=valesaug_jcodes -e POSTGRES_P
 
 #### Project Structure
 
+Test
+
 ```
 📁 src/
 ├── 📁 @types/ → 1. Custom types definition (Data.ts)
