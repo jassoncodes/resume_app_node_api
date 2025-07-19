@@ -1,11 +1,12 @@
 {
   "name": "jassoncodesapi",
   "version": "1.2.1",
-  "main": "src/server.js",
-  "type": "module",
+  "main": "src/server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server.js",
+    "start": "cross-env NODE_ENV=production node dist/server.js",
+    "start:prod": "cross-env NODE_ENV=production node server.js",
+    "clean": "rm -rf dist",
     "dev": "cross-env NODE_ENV=development tsx watch src/server.ts",
     "build": "tsc",
     "lint": "eslint 'src/**/*.ts' --fix"

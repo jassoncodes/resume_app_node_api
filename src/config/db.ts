@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { DataModel } from "@/models/dataModel";
-import logger from "@/utils/logger";
+import { DataModel } from "../models/dataModel";
+import logger from "../utils/logger";
 
 // Detect environment (default to 'development' if not set)
 const env = process.env.NODE_ENV || "development";

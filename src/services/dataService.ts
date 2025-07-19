@@ -1,5 +1,5 @@
-import { Data } from "@/@types/data";
-import DataRespository from "@/repositories/dataRespository";
+import { Data } from "../types/data";
+import DataRespository from "../repositories/dataRespository";
 
 class DataService {
   private repository = new DataRespository();

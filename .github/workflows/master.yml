@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           local-dir: ./deploy/
-          server-dir: /api/
+          server-dir: /app/api/
           exclude: |
             **/.git*
             **/node_modules/**

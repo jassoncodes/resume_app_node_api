@@ -1,7 +1,7 @@
-import { Data } from "@/@types/data";
-import { AppDataSource } from "@/config/db";
-import IRepository from "@/interfaces/IRepositoy";
-import { DataModel } from "@/models/dataModel";
+import { Data } from "../types/data";
+import { AppDataSource } from "../config/db";
+import IRepository from "../interfaces/IRepositoy";
+import { DataModel } from "../models/dataModel";
 
 class DataRespository implements IRepository<Data> {
   private repository = AppDataSource.getRepository(DataModel);

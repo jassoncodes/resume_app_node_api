@@ -1,5 +1,5 @@
-import { Data } from "@/@types/data";
-import DataService from "@/services/dataService";
+import { Data } from "../types/data";
+import DataService from "../services/dataService";
 import { Request, Response } from "express";
 
 const service = new DataService();
