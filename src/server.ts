@@ -17,6 +17,7 @@ dotenv.config({
 });
 
 const app = express();
+const host = process.env.APP_HOST;
 const port = process.env.APP_PORT;
 
 app.use(morganMiddleware);
@@ -34,7 +35,7 @@ app.use("/api/dummytodo", dummyRoute);
 
 app.listen(port, async () => {
   logger.info(
-    `🚀 Server running in ${process.env.NODE_ENV} mode on http://localhost:${port}`
+    `🚀 Server running in ${process.env.NODE_ENV} mode on ${host}:${port}`
   );
   await checkDatabaseConnection();
 });
