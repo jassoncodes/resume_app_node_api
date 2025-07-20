@@ -33,6 +33,10 @@ app.use(express.json());
 app.use("/api/data", dataRoutes);
 app.use("/api/dummytodo", dummyRoute);
 
+app.get("/", (req, res) => {
+  res.send("🪄 API running");
+});
+
 app.listen(port, async () => {
   logger.info(
     `🚀 Server running in ${process.env.NODE_ENV} mode on ${host}:${port}`
