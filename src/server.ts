@@ -18,7 +18,7 @@ dotenv.config({
 
 const app = express();
 const host = process.env.APP_HOST;
-const port = process.env.APP_PORT;
+const port = process.env.APP_PORT || 5000;
 
 app.use(morganMiddleware);
 
