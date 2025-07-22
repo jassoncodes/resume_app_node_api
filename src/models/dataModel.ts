@@ -2,15 +2,14 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity({ name: "test" })
 export class DataModel {
-    @PrimaryGeneratedColumn()
-    id!: number;
+  @PrimaryGeneratedColumn()
+  id!: number;
 
-    @Column({ type: "jsonb" })
-    data!: object;
+  @Column({ type: "jsonb" })
+  data!: object;
 }
 
-
-/// [old data model] before TypeORM 
+/// [old data model] before TypeORM
 // import { Data } from "@/@types/data.js";
 // import pool from "../config/db.js";
 

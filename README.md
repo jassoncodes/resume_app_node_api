@@ -10,6 +10,14 @@
 docker run --name jasson-postgres -e POSTGRES_USER=valesaug_jcodes -e POSTGRES_PASSWORD=jcodesvalesaug -e POSTGRES_DB=valesaug_jassoncodes -p 5432:5432 -v jasson_pgdata:/var/lib/postgresql/data -d postgres:10.23
 ```
 
+### TypeORM
+
+Generate migration
+
+```bash
+typeorm migration:generate -d path/to/dataSource path/to/migrationDir
+```
+
 #### Project Structure
 
 Test

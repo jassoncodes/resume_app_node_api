@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { DataModel } from "../models/dataModel";
 import logger from "../utils/logger";
 
 // Detect environment (default to 'development' if not set)
@@ -23,7 +22,8 @@ export const AppDataSource = new DataSource({
   database: process.env.POSTGRES_DB,
   synchronize: false,
   logging: true,
-  entities: [DataModel],
+  entities: [__dirname + "/../models/*.ts"],
+  migrations: [__dirname + "/../migrations/*.ts"],
 });
 
 AppDataSource.initialize()
