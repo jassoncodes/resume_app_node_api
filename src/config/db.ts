@@ -27,5 +27,14 @@ export const AppDataSource = new DataSource({
 });
 
 AppDataSource.initialize()
-  .then(() => logger.info("📦 TypeORM: Base de datos conectada"))
-  .catch((error) => logger.error("❌ TypeORM: Error conectando la BD:", error));
+  .then(async () => {
+    logger.info("📦 TypeORM: Base de datos conectada");
+
+    if (process.env.NODE_ENV === "PRODUCTION") {
+      await AppDataSource.runMigrations();
+      logger.info("🪄 Migration completed");
+    }
+  })
+  .catch((error) =>
+    logger.error("❌ TypeORM: Error while initializing database:", error)
+  );

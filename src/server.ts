@@ -11,38 +11,33 @@ import morganMiddleware from "./utils/morganHttpReqLogger";
 import logger from "./utils/logger";
 import path from "path";
 import { ErrorHandler } from "./errors/ErrorHandler";
-
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://jasson.codes",
-  "https://www.jasson.codes",
-];
+import { NotFoundError } from "./errors/NotFound";
+import { corsOptions } from "./config/config";
 
 const env = process.env.NODE_ENV || "development";
 dotenv.config({
-  path: path.resolve(__dirname, `../.env.${env}`),
+  path: path.resolve(__dirname, `../.env.${env.toLocaleLowerCase()}`),
 });
 
 const app = express();
-const host = process.env.APP_HOST;
-const port = process.env.PORT || process.env.APP_PORT || 5000;
+const host = process.env.HOST || "localhost";
+const port = process.env.PORT || 5000;
 
 app.use(morganMiddleware);
 
-app.use(
-  cors({
-    origin: allowedOrigins,
-    credentials: false,
-  })
-);
+app.use(cors(corsOptions));
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("✅ API running");
+});
+
+app.use("/api", resumeApiRouter);
 app.use("/api/data", dataRoutes);
 app.use("/api/dummytodo", dummyRoute);
-app.use("/api", resumeApiRouter);
 
-app.get("/", (req, res) => {
-  res.send("🪄 API running");
+app.use((req, res, next) => {
+  next(new NotFoundError(`❌ Endpoint not found: ${req.originalUrl}`));
 });
 
 app.use(ErrorHandler);

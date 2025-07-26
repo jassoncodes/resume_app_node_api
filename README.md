@@ -15,7 +15,13 @@ docker run --name jasson-postgres -e POSTGRES_USER=valesaug_jcodes -e POSTGRES_P
 Generate migration
 
 ```bash
-typeorm migration:generate -d path/to/dataSource path/to/migrationDir
+typeorm migration:generate -d path/to/dataSource/data-source.ts path/to/migrationDir
+```
+
+Run migration
+
+```bash
+typeorm migration:run -d path/to/dataSource/data-source.ts
 ```
 
 #### Project Structure

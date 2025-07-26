@@ -4,12 +4,14 @@
   "main": "src/server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env NODE_ENV=production node dist/server.js",
-    "typeorm": "ts-node --transpile-only ./node_modules/typeorm/cli",
+    "start": "cross-env NODE_ENV=PRODUCTION node dist/server.js",
     "start:prod": "node server.js",
     "clean": "rm -rf dist",
-    "dev": "cross-env NODE_ENV=development tsx watch src/server.ts",
+    "dev": "cross-env NODE_ENV=DEVELOPMENT tsx watch src/server.ts",
     "build": "tsc",
+    "typeorm": "ts-node --transpile-only ./node_modules/typeorm/cli -d src/config/data-source.ts",
+    "migration:run": "npm run typeorm -- migration:run",
+    "migration:revert": "npm run typeorm -- migration:revert",
     "lint": "eslint 'src/**/*.ts' --fix"
   },
   "keywords": [],

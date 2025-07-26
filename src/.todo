@@ -1,4 +1,8 @@
+TODO 
+
 [] Remove Data Endpoint
 [] Remove DummyToDo Endpoint
 [] Remove DummyTodo type
 [] Add real endpoints for resume app api
+[] Error handling
+
